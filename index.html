@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>	
+  <meta charset="UTF-8">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <meta name="viewport" content ="width=device-width,initial-scale=1,user-scalable=yes" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script async defer src="https://maps.googleapis.com/maps/api/js?v=3"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="project2.html">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Lobster&family=Satisfy&display=swap" rel="stylesheet">
+	<title></title>
+	<style>
+      html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+    #overlayText {
+ position:absolute;
+  top:50%;
+  left:5%;
+  z-index:1;
+}
+
+#topText {
+    position: absolute;
+     top:20%;
+  left:20%;
+  color: white;
+  font-size: 20px;
+  align-self: center;
+animation: letter 9s 5;
+}
+
+
+    body {
+      background: #eee;
+      overflow:hidden
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 10px;
+      padding: 0px;
+    }
+    img {
+  width: 100%;
+  height: auto;
+    }
+    .container1 {
+  display: flex;
+  width: 100%;
+  padding: 4% 2%;
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+.box1 {
+  flex: 1;
+  overflow: hidden;
+  transition: .5s;
+  margin: 0 2%;
+  box-shadow: 0 20px 30px rgba(0,0,0,.1);
+  line-height: 0;
+}
+
+.box1 > a>img {
+  width: 200%;
+  height: calc(100% - 10vh);
+  object-fit: cover; 
+  transition: .5s;
+}
+
+.box1 >a> span {
+  font-size: 3.8vh;
+  display: block;
+  text-align: center;
+  height: 10vh;
+  line-height: 2.6;
+}
+
+.box1:hover { flex: 1 1 50%; }
+.box1:hover > img {
+  width: 100%;
+  height: 100%;
+}
+ 
+
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+    
+     .cursor{
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #c6c6c6;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: .1s;
+}
+
+.cursor2{
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background-color: #c6c6c6;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: .15s;
+}
+
+.content:hover ~ .cursor{
+  transform: translate(-50%, -50%) scale(1.5);
+  background-color: #c6c6c6;
+  opacity: .5;
+}
+
+.content:hover ~ .cursor2{
+  opacity: 0;
+}
+
+  </style>
+</head>
+<body >
+<nav class="navbar bg-light navbar-light navbar-expand-lg">
+  <div class="container">
+    <a href="#" class="navbar-brand" style="text-align: center;font-family: 'Satisfy', cursive;">
+      YOU&US
+ </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Categories
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#Department"></a>
+          <a class="dropdown-item" href="#Department"></a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#Department"></a>
+        </div>
+      </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="formcar.html">login</a></li>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+<!-- Nav End -->
+<div class="fullscreen" >
+
+  <video autoplay muted loop id="myVideo"  style="width: 100vw; height: auto;"> 
+    <source src="daimler.mp4" type="video/mp4">
+  </video> </div>
+  <div class="overlayText">
+    <div class="caption">
+        <p id="topText"><span class="border" style="font-size: 5vw;">Our Fleet, Your Fleet</span>
+        	<h1 style="text-align: center; " id="topText"><span class="text_1" >Explore our first class car rental services</span><span class="text_2" >With US! Our Fleet, Your Fleet</span></h1>
+
+</p></div>
+</div>
+
+<h1 style="text-align:center; font-family: 'Tangerine', serif; font-size: 40px; margin-top: 5%">Plan Your Trip Now</h1>
+  <p  style="text-align: center;">We offer professional car rental & limousine services in our range of high-end vehicles</p>
+  <div class="container1">
+  <div class="box1">
+    <a href="audi.html"><img src="https://i.pinimg.com/originals/12/d4/32/12d432b6938fcbd548a5c6d10a90c685.jpg">
+    <span>AUDI</span>
+  </div></a>
+  <div class="box1">
+    <a href="audi.html"><img src="https://imgd.aeplcdn.com/0x0/n/cw/ec/45242/bmw-x1-facelift-right-front-three-quarter2.jpeg">
+    <span>BMW</span></a>
+  </div>
+  <div class="box1">
+    <a href="audi.html"><img src="https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2020/07/mercedes-amg-c-63-coup-1594448318.jpg">
+    <span>MERCEDES</span></a>
+  </div>
+  <div class="box1">
+    <a href="audi.html"><img src="https://cars.usnews.com/static/images/Auto/izmo/i159613994/2020_toyota_c_hr_angularfront.jpg">
+    <span>TOYOTA</span></a>
+  </div>
+</div>
+<div>
+<div class="swiper-container" style="opacity: 0.5">
+	
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+      	<img src="https://www.redtailtelematics.com/wp-content/uploads/2019/09/night-driving-ban.jpg">
+      </div>
+      <div class="swiper-slide"><img src="https://miro.medium.com/max/975/1*eY0kolIv3vFuyqK5LTZ3XA.png"></div>
+      <div class="swiper-slide"><img src="https://image.freepik.com/free-photo/car-with-dirt-road-rally-nature-background_1150-9169.jpg"></div>
+      <div class="swiper-slide"><img src="https://www.familyvacationcritic.com/wp-content/uploads/sites/19/2013/05/CarRental-RoadTrip-HERO.jpg"></div>
+      <div class="swiper-slide"><img src="http://driving-tests.org/wp-content/uploads/2012/05/bags-on-the-car.jpg"></div>
+      <div class="swiper-slide"><img src="https://topshineautodetailing.com/blog/summer-vacation-clean-car/summer-vacation-clean-car.jpg"></div>
+      <div class="swiper-slide"><img src="https://labuvettebistro.com/wp-content/uploads/2020/07/car-rental-at-mountains.jpg"></div>
+      <div class="swiper-slide"><img src="https://poasrentacar.com/blog/wp-content/uploads/2018/07/depositphotos_12724133_m-2015.jpg"></div>
+      <div class="swiper-slide"><img src="https://www.rhinocarhire.com/CorporateSite/media/Site-Images/new/background.jpg"></div>
+      <div class="swiper-slide"><img src="https://www.rentacarnoosa.com.au/wp-content/uploads/2015/12/rent-car-noosa-hire-airport-transfers-BG-3.jpg"></div>
+    </div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>
+
+  <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+   <script>
+    var swiper = new Swiper('.swiper-container', {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+<div class="cursor"></div>
+  <div class="cursor2"></div>
+
+  <script>
+    var cursor = document.querySelector(".cursor");
+    var cursor2 = document.querySelector(".cursor2");
+    document.addEventListener("mousemove",function(e){
+      cursor.style.cssText = cursor2.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
+    });
+  </script>
+
+  
+<div style="background-color: ; margin-top: 20px; margin-bottom: 70px;">
+<h1 style="text-align: center;">OUR BENEFITS</h1>
+<div class="container" style="background-color: ">
+  <div class="row">
+    <div class="col-sm" >
+    	<br><br><i class="fa fa-smile-o  fa-5x center" aria-hidden="true"></i><br><br>
+      Our Customers Always
+100% Satisfied<br>
+<p>Once seected, Book
+our auto and set a
+pickup date / time</p>
+    </div>
+    <div class="col-sm"><br><br>
+    	<i class="fa fa-car fa-5x" aria-hidden="true"></i><br><br>
+      We Provide Easier
+& Faster Bookings<br>
+<p>Once seected, Book
+our auto and set a
+pickup date / time</p>
+    </div>
+    <div class="col-sm">
+    	<br><br><i class="fa fa-heart-o fa-5x" aria-hidden="true"></i><br><br>
+      Your Choice of
+Any Pickup Location<br>
+<p>Once seected, Book
+our auto and set a
+pickup date / time</p>
+    </div>
+  </div>
+</div></div>
+
+<!-- Footer -->
+<footer class="page-footer font-small unique-color-dark">
+
+  <div style="background-color: #6351ce;">
+    <div class="container">
+
+      <!-- Grid row-->
+      <div class="row py-4 d-flex align-items-center">
+
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+          <h6 class="mb-0">Get connected with Sharda University on social networks!</h6>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+          <!-- Facebook -->
+          <a class="fb-ic">
+            <i class="fa fa-facebook-f white-text mr-4"> </i>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic">
+            <i class="fa fa-twitter white-text mr-4"> </i>
+          </a>
+          <!-- Google +-->
+          <a class="gplus-ic">
+            <i class="fa fa-google-plus white-text mr-4" aria-hidden="true"></i>
+          </a>
+          <!--Linkedin -->
+          <a class="li-ic">
+           <i class="fa fa-linkedin white-text mr-4" aria-hidden="true"></i>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic">
+            <i class="fa fa-instagram white-text"> </i>
+          </a>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row-->
+
+    </div>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left mt-5">
+
+    <!-- Grid row -->
+    <div class="row mt-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+        <!-- Content -->
+        <h6 class="text-uppercase font-weight-bold">Sharda University</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <i class="fa fa-home white-textmr-4"></i>
+Plot No. 32, 34, Knowledge Park III, Greater Noida, Uttar Pradesh 201310</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Connect</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <a href="slideshow.html">Image Gallery</a>
+        </p>
+        <p>
+          <a href="https://suat.sharda.ac.in/">SUAT</a>
+        </p>
+        <p>
+          <a href="https://www.sharda.ac.in/connect/brochure">Brochure</a>
+        </p>
+        
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Find Us!</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto">
+        <p><i class="fa fa-search" aria-hidden="true" style="font-size: 50px;"></i>
+          <a href="https://www.google.com/maps/dir/28.4708925,77.4863856/Plot+No.+32-34,+Knowledge+Park+III,Greater+Noida,+Uttar+Pradesh+201310/@28.4712506,77.4807109,16z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x390cea0f7b91511b:0x486f13bd49e5e7ae!2m2!1d77.4832082!2d28.4736346">Sharda Map</a>
+        </p>
+        ___________________________<br>
+        <p><br><i class="fa fa-binoculars fa-lg" aria-hidden="true" style="font-size: 50px;"></i>
+          <a href="https://www.sharda.ac.in/vtour/tour.html?startscene=0&startactions=lookat(5.99,24.13,120,0,0); " >Virtual View</a>
+        </p>
+        
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Contact</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        
+        <p>
+          <i class="fa fa-envelope"></i> admission@sharda.ac.in</p>
+        <p>
+          <i class="fa fa-phone" aria-hidden="true"></i> +91-120-4570000 </p>
+        <p>
+          <i class="fa fa-phone" aria-hidden="true"></i> +91-120-4060210</p>
+        <p>
+          <i class="fa fa-phone" aria-hidden="true"></i> +91-120-4060211</p>
+  
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/"> Sharda University</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+</body>
+</html>

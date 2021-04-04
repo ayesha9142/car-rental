@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <meta name="viewport" content ="width=device-width,initial-scale=1,user-scalable=yes" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?v=3"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Lobster&family=Satisfy&display=swap" rel="stylesheet">
+    <style type="text/css">
+    	.hero {
+    position: relative; 
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero::before {    
+      content: "";
+      background-image: url("https://wallpaperaccess.com/full/1480373.jpg");
+      background-size: cover;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 0.75;
+}
+
+h1 {
+  position: relative;
+  color: black;  
+  font-size: 14rem;
+  line-height: 0.9;
+  text-align: center;
+}
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+    </style>
+
+</head>
+
+<body>
+	<nav class="navbar bg-light navbar-light navbar-expand-lg">
+  <div class="container">
+    <a href="#" class="navbar-brand" style="text-align: center;font-family: 'Satisfy', cursive;">
+      YOU&US
+ </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Categories
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#Department"></a>
+          <a class="dropdown-item" href="#Department"></a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#Department"></a>
+        </div>
+      </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="new_form.html">login</a></li>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+<!-- Nav End -->
+	<<div class="hero">
+    <h1>Audi</h1>
+</div>
+<div class="row" style="margin-top: 5%">
+  <div class="col">
+  	<div class="container">
+  <a href="audizoom.html"><img src="https://images.hgmsites.net/hug/audi-a3_100744266_h.jpg" alt="Avatar" class="image">
+  <div class="overlay">
+    <div class="text">Audi A3</div></a>
+  </div>
+</div>
+  </div>
+  <div class="col">
+  	<div class="container">
+  <a href="audizoom.html"><img src="https://imgd.aeplcdn.com/0x0/n/cw/ec/51909/a4-exterior-right-front-three-quarter-2.jpeg" alt="Avatar" class="image">
+  <div class="overlay">
+    <div class="text">Audi A4</div></a>
+  </div>
+</div>
+  </div>
+  <div class="w-100"></div>
+  <div class="col">
+  	<div class="container">
+  <a href="audizoom.html"><img src="https://cars.usnews.com/static/images/Auto/izmo/i159614344/2021_audi_q5_angularfront.jpg" alt="Avatar" class="image">
+  <div class="overlay">
+    <div class="text">Audi Q5</div></a>
+  </div>
+</div>
+  </div>
+  <div class="col">
+  	<div class="container">
+  <a href="audizoom.html"><img src="https://images.hgmsites.net/hug/2020-audi-a8_100708460_h.jpg" alt="Avatar" class="image">
+  <div class="overlay">
+    <div class="text">Audi A8</div></a>
+  </div>
+</div>
+  </div>
+</div>
+</body>
+</html>
